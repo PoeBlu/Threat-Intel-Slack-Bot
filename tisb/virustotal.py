@@ -15,22 +15,19 @@ def vt_domain_get(domain):
     domain = domain.lower()
     path = f"/vtapi/v2/domain/report?apikey={vt_api_key}&domain={domain}"
     url = base_url + path
-    vt_results = requests.get(url).json()
-    return vt_results
+    return requests.get(url).json()
 
 
 def vt_hash_get(hash):
     path = f"/vtapi/v2/file/report?apikey={vt_api_key}&resource={hash}"
     url = base_url + path
-    vt_results = requests.get(url).json()
-    return vt_results
+    return requests.get(url).json()
 
 
 def vt_ip_get(ip):
     path = "/vtapi/v2/ip-address/report?apikey={vt_api_key}&ip={ip}"
     url = base_url + path
-    vt_results = requests.get(url).json()
-    return vt_results
+    return requests.get(url).json()
 
 
 def handler(*, indicator, channel):
