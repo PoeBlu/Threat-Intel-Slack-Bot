@@ -26,12 +26,10 @@ def handler(*, indicator, channel):
 
 
 def passivetotal_get(indicator):
-    path = "/v2/dns/passive"
-    url = base_url + path
+    url = f"{base_url}/v2/dns/passive"
     data = {"query": indicator}
 
-    pdns_results = requests.get(url, auth=auth, json=data).json()
-    return pdns_results
+    return requests.get(url, auth=auth, json=data).json()
 
 
 def format_message_for_slack(response, indicator):

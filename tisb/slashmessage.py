@@ -11,6 +11,4 @@ def handler(*, channel, indicator):
         InvocationType='Event',
         Payload=json.dumps({"indicator": indicator, "channel": channel})
     )
-    status = {"statusCode": 200, "body": "Processing Request."}
-
-    return status
+    return {"statusCode": 200, "body": "Processing Request."}
